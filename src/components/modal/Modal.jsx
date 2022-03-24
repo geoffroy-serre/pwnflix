@@ -37,12 +37,12 @@ function Modal({isShowing, close, media, genre}) {
 									{isFavorite ? (
 										<FaHeart
 											onClick={() => setIsFavorite(!isFavorite)}
-											className=" cursor-pointer hover:scale-125 transition-all ease-in-out duration-200 text-[#E50914] absolute top-2 right-2 text-2xl"
+											className=" cursor-pointer hover:scale-125 transition-all ease-in-out duration-200 text-[#E50914] absolute top-1/2 right-2 -translate-y-1/2 text-2xl"
 										/>
 									) : (
 										<FiHeart
 											onClick={() => setIsFavorite(!isFavorite)}
-											className=" cursor-pointer hover:scale-125 transition-all ease-in-out duration-200 absolute top-2 right-2 text-2xl"
+											className=" cursor-pointer hover:scale-125 transition-all ease-in-out duration-200 absolute top-1/2 -translate-y-1/2 right-2 text-2xl"
 										/>
 									)}
 								</div>

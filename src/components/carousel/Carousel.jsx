@@ -9,13 +9,13 @@ function Carousel({dataArray, genre}) {
 	return (
 		<div className="relative ">
 			<button
-				className="absolute z-10 bg-black bg-opacity-50 top-16 left-2 rounded-full px-2 h-[30px] text-white font-bold hover:bg-opacity-100 transition-all ease-in-out duration-200 "
+				className="absolute z-10 bg-black bg-opacity-50 top-1/2 left-2 -translate-y-1/2 rounded-full px-2 h-[30px] text-white font-bold hover:bg-opacity-100 transition-all ease-in-out duration-200 "
 				onClick={() => scroll(ref, -800)}
 			>
 				<FiChevronLeft />
 			</button>
 			<button
-				className="absolute z-10 bg-black bg-opacity-50 top-16 right-2 rounded-full px-2 py-2 text-white font-bold hover:bg-opacity-100 transition-all ease-in-out duration-200 "
+				className="absolute z-10 bg-black bg-opacity-50 top-1/2 right-2 -translate-y-1/2 rounded-full px-2 py-2 text-white font-bold hover:bg-opacity-100 transition-all ease-in-out duration-200"
 				onClick={() => scroll(ref, 800)}
 			>
 				<FiChevronRight />

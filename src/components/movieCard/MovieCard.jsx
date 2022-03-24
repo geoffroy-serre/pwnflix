@@ -16,7 +16,7 @@ function MovieCard({media, genre}) {
 			>
 				<h2 className=" w-full absolute bottom-2 px-3 py-2 font-semibold bg-black  bg-opacity-30  truncate ">
 					{title}
-					<FiHeart className="absolute top-3 right-2" />
+					<FiHeart className="absolute top-1/2 -translate-y-1/2 right-2" />
 				</h2>
 				<img
 					className="object-fill rounded-md"
