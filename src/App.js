@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import './App.css';
 import Header from './components/header/Header';
+import Collections from './pages/collections/Collections';
 import Home from './pages/home/Home';
 import Search from './pages/search/Search';
 import {pingBackEnd} from './utils/ping';
@@ -16,6 +17,7 @@ function App() {
 					<Routes>
 						<Route path="/" element={<Home />} />
 						<Route path="/search" element={<Search />} />
+						<Route path="/collections" element={<Collections />} />
 					</Routes>
 				</main>
 			</BrowserRouter>

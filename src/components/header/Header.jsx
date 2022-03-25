@@ -23,7 +23,7 @@ function Header() {
 						Séries
 					</li>
 					<li className="mr-3 hover:text-gray-300 font-semibold cursor-pointer transition-all duration-150 ease-in-out">
-						Collections
+						<Link to="/collections">Collections</Link>
 					</li>
 					<li className="ml-20 ">
 						<div className="relative">

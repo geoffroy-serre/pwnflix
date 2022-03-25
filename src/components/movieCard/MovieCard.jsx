@@ -1,12 +1,22 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Modal from '../modal/Modal';
 import useModal from '../modal/useModal';
 import {FiHeart} from 'react-icons/fi';
 import {FaHeart} from 'react-icons/fa';
+import {getMovie, isMovieSaved} from '../../utils/backend';
 
 function MovieCard({media, genre}) {
 	const {isShowing, toggle} = useModal();
+	const [isBookmarked, setIsBookmarked] = useState(false);
 	const title = media.media_type === 'tv' ? media.name : media.title;
+
+	useEffect(() => {
+		isMovieSaved(media.id).then((res) => {
+			setIsBookmarked(res?.data);
+		});
+		// .catch((err) => console.warn(err));
+		// }
+	}, []);
 
 	return (
 		<React.Fragment>
@@ -16,7 +26,11 @@ function MovieCard({media, genre}) {
 			>
 				<h2 className=" w-full absolute bottom-2 px-3 py-2 font-semibold bg-black  bg-opacity-30  truncate ">
 					{title}
-					<FiHeart className="absolute top-1/2 -translate-y-1/2 right-2" />
+					{isBookmarked ? (
+						<FaHeart className="text-[#E50914] absolute top-1/2 -translate-y-1/2 right-2" />
+					) : (
+						<FiHeart className="absolute top-1/2 -translate-y-1/2 right-2" />
+					)}
 				</h2>
 				<img
 					className="object-fill rounded-md"
@@ -24,7 +38,16 @@ function MovieCard({media, genre}) {
 					alt={`Poster du film ${media.title}`}
 				/>
 			</div>
-			<Modal isShowing={isShowing} close={toggle} media={media} genre={genre} />
+			{isShowing && (
+				<Modal
+					isShowing={isShowing}
+					close={toggle}
+					media={media}
+					genre={genre}
+					isBookmarked={isBookmarked}
+					setIsBookmarked={setIsBookmarked}
+				/>
+			)}
 		</React.Fragment>
 	);
 }

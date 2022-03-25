@@ -5,7 +5,7 @@ import {FiChevronLeft, FiChevronRight} from 'react-icons/fi';
 
 function Carousel({dataArray, genre}) {
 	const ref = useRef();
-	console.log(genre);
+	// console.log(genre);
 	return (
 		<div className="relative ">
 			<button
